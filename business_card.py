@@ -19,7 +19,7 @@ class nameCard:
 #print(name1)
 
 def fake_names():
-    list= []
+    list = []
     for i in range(10):
         list.append(nameCard(first_name=fake.first_name(), last_name=fake.last_name(), company=fake.company(), position=fake.job(), email=fake.ascii_company_email()))
     return list
