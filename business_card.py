@@ -16,7 +16,7 @@ class BaseContact:
         return f"BaseContact(first_name={self.first_name}, last_name={self.last_name}, email={self.email} phone_number={self.phone_number})"
 
     def contact(self):
-        return print(f"Wybieram {self.phone_number} i dzwonię do {self.first_name} {self.last_name}")
+        return print(f"Wybieram {self.phone_number} i dzwonie do {self.first_name} {self.last_name}")
 
     @property
     def name_lenght(self):
@@ -40,22 +40,22 @@ class BusinessContact(BaseContact):
 
 #fake card creator function
 def create_contacts():
-    type = input("Wpisz rodzaj wizytówki (BaseContact or BusinessContact): ")
-    if type == "BaseContact" or type == "BusinessContact":
+    type = input("Wpisz rodzaj wizytowki (base_contact or business_contact): ").lower()
+    if type == "base_contact" or type == "business_contact":
         try:
-            quantity = int(input("Wpisz ile chcesz wygenerować wizytówek: "))
+            quantity = int(input("Wpisz ile chcesz wygenerować wizytowek: "))
         except ValueError:
-            print("Proszę podać liczbę!!")
+            print("Proszę podać liczbe!!")
             exit(1)
         list_base_contact = []
         list_busniess_contact = []
-        if type == "BaseContact":
+        if type == "base_contact":
             for i in range(quantity):
                 list_base_contact.append(BaseContact(first_name=fake.first_name(), last_name=fake.last_name(), email=fake.ascii_email(), phone_number=fake.msisdn()))
             for name in list_base_contact:
                 print("{}, {}, {}, {}".format(name.first_name, name.last_name, name.email, name.phone_number))
             return list_base_contact
-        elif type == "BusinessContact":
+        elif type == "business_contact":
             for i in range(quantity):
                 list_busniess_contact.append(BusinessContact(first_name=fake.first_name(), last_name=fake.last_name(), email=fake.ascii_email(),
                 phone_number=fake.msisdn(), position=fake.job(), company=fake.company(), business_phone=fake.msisdn(), business_email=fake.ascii_company_email()))
@@ -63,8 +63,10 @@ def create_contacts():
                 print("{}, {}, {}, {}, {}, {}, {}, {}".format(name.first_name, name.last_name, name.email, name.phone_number, name.position, name.company, name.business_phone, name.business_email))
             return list_busniess_contact
     else:
+        print("Prosze podac poprawna komende")
         exit(1)
    
+#create_contacts()
 for z in create_contacts():
     print(z.name_lenght)
 
