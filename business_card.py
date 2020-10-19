@@ -35,7 +35,7 @@ class BusinessContact(BaseContact):
         return f"BusinessContact(first_name={self.first_name}, last_name={self.last_name}, email={self.email} phone_number={self.phone_number}, position={self.position}, company={self.company}, business_phone={self.business_phone}, business_email={self.business_email})"
 
 #name1 = BaseContact("Szymon", "Debski", "debski", 600)
-#name2 = BusinessContact(first_name="Gosia", last_name="Misiura", email="gosia@email.pl", phone_number="500500500", position="Dyrektor", company="Loreal", business_phone="600600600", business_email="gosia.biz@email.pl")
+#name2 = BusinessContact(first_name="Jan", last_name="Kowalski", email="jan@email.pl", phone_number="500500500", position="Dyrektor", company="BMW", business_phone="600600600", business_email="jan.biz@email.pl")
 #print(name1)
 
 #fake card creator function
